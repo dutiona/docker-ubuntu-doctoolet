@@ -10,8 +10,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 RUN apt-get update && apt-get dist-upgrade -y && apt-get upgrade -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
     build-essential binutils git ninja-build cmake bear python python3 python-pip python3-pip \
-    texlive-full htmldoc
+    texlive-full htmldoc pandoc npm
 RUN apt-get update && apt-get upgrade -y && apt-get autoremove -y && apt-get autoclean -y && rm -rf /var/lib/apt/lists/
+
+RUN npm install -g markdown-pdf
 
 # Install python packages
 RUN echo y | pip install -U pip
