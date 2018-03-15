@@ -24,7 +24,7 @@ RUN echo y | pip install -U six wheel setuptools
 RUN echo y | pip install sphinx breathe exhale sphinx_rtd_theme
 RUN echo y | pip3 install -U pip
 RUN echo y | pip3 install -U six wheel setuptools
-RUN echo y | pip3 install conan sphinx breathe exhale sphinx_rtd_theme
+RUN echo y | pip3 install sphinx breathe exhale sphinx_rtd_theme
 
 WORKDIR /workspace
 
