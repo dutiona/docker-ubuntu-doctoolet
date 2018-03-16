@@ -13,7 +13,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
     texlive-full
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    htmldoc pandoc npm doxygen
+    htmldoc pandoc npm doxygen tree
 RUN apt-get update && apt-get upgrade -y && apt-get autoremove -y && apt-get autoclean -y && rm -rf /var/lib/apt/lists/
 
 RUN npm install -g markdown-pdf
