@@ -10,8 +10,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 RUN apt-get update && apt-get dist-upgrade -y && apt-get upgrade -y
 RUN apt-get install -y \
     build-essential binutils git ninja-build cmake python python3 python-pip python3-pip
-RUN apt-get install -y \
-    texlive-full
+RUN export DEBIAN_FRONTEND_BACKUP=$DEBIAN_FRONTEND && export DEBIAN_FRONTEND=noninteractive && \
+    apt-get install -y texlive-full && \
+    export DEBIAN_FRONTEND=$DEBIAN_FRONTEND_BACKUP
 RUN apt-get install -y \
     htmldoc pandoc npm doxygen graphviz tree
 RUN apt-get update && apt-get upgrade -y && apt-get autoremove -y && apt-get autoclean -y && rm -rf /var/lib/apt/lists/
