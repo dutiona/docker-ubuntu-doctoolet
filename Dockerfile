@@ -15,7 +15,11 @@ RUN export DEBIAN_FRONTEND_BACKUP=$DEBIAN_FRONTEND && export DEBIAN_FRONTEND=non
     export DEBIAN_FRONTEND=$DEBIAN_FRONTEND_BACKUP
 RUN apt-get install -y \
     htmldoc pandoc npm doxygen graphviz tree
-RUN apt-get update && apt-get upgrade -y && apt-get autoremove -y && apt-get autoclean -y && rm -rf /var/lib/apt/lists/
+RUN apt-get update && apt-get upgrade -y
+
+# Clean
+RUN apt-get autoremove -y && apt-get autoclean -y
+# RUN rm -rf /var/lib/apt/lists/
 
 RUN npm install -g markdown-pdf
 
