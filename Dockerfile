@@ -25,9 +25,9 @@ RUN npm install -g markdown-pdf
 
 # Install python packages
 RUN echo y | pip install -U pip six wheel setuptools
-RUN echo y | pip install sphinx breathe exhale sphinx_rtd_theme
+RUN echo y | pip install sphinx breathe exhale sphinx_rtd_theme conan
 RUN echo y | pip3 install -U pip six wheel setuptools
-RUN echo y | pip3 install sphinx breathe exhale sphinx_rtd_theme
+RUN echo y | pip3 install sphinx breathe exhale sphinx_rtd_theme conan
 
 WORKDIR /workspace
 
