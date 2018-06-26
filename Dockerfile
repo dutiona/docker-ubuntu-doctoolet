@@ -29,6 +29,9 @@ RUN echo y | pip install sphinx breathe exhale sphinx_rtd_theme conan
 RUN echo y | pip3 install -U pip six wheel setuptools
 RUN echo y | pip3 install sphinx breathe exhale sphinx_rtd_theme conan
 
+WORKDIR /root/.conan/profiles
+COPY conan-profiles/* ./
+
 WORKDIR /workspace
 
 CMD ["/bin/bash"]
