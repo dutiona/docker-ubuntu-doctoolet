@@ -10,6 +10,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 RUN apt-get update && apt-get dist-upgrade -y && apt-get upgrade -y
 RUN apt-get install -y \
     build-essential binutils git ninja-build cmake python python3 python-pip python3-pip
+RUN export DEBIAN_FRONTEND_BACKUP=$DEBIAN_FRONTEND && export DEBIAN_FRONTEND=noninteractive && \
+    apt-get install -y tzdata && \
+    ln -fs /usr/share/zoneinfo/Europe/Paris /etc/localtime && \
+    dpkg-reconfigure --frontend noninteractive tzdata && \
+    export DEBIAN_FRONTEND=$DEBIAN_FRONTEND_BACKUP
 RUN apt-get install -y \
     texlive-full
 RUN apt-get install -y \
