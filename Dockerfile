@@ -18,7 +18,7 @@ RUN export DEBIAN_FRONTEND_BACKUP=$DEBIAN_FRONTEND && export DEBIAN_FRONTEND=non
 RUN apt-get install -y \
   texlive-full
 RUN apt-get install -y \
-  htmldoc pandoc npm doxygen graphviz tree
+  htmldoc pandoc npm doxygen graphviz tree inkscape
 RUN apt-get update && apt-get upgrade -y
 
 # Clean
