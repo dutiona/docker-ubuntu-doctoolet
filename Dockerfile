@@ -16,7 +16,7 @@ RUN export DEBIAN_FRONTEND_BACKUP=$DEBIAN_FRONTEND && export DEBIAN_FRONTEND=non
   dpkg-reconfigure --frontend noninteractive tzdata && \
   export DEBIAN_FRONTEND=$DEBIAN_FRONTEND_BACKUP
 RUN apt-get install -y \
-  texlive-full
+  texlive-full texlive-extra-utils
 RUN apt-get install -y \
   htmldoc pandoc npm doxygen graphviz tree inkscape
 RUN apt-get update && apt-get upgrade -y
